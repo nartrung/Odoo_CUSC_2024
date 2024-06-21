@@ -193,7 +193,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title">Thêm thông tin người thân</h4>
-                    <button type="button" class="btn-close" data-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                   </div>
 
                   <div class="modal-body">
@@ -218,7 +218,7 @@
                         <input type="text" id="relative_nghenghiep" class="form-control" required=""/>
                           <label for="relative_nghenghiep">Nghề nghiệp</label>
                       </div>
-                      <button type="button" data-dismiss="modal" class="btn btn-primary" id="add_relative_row_btn">Thêm</button>
+                      <button type="button" data-bs-dismiss="modal" class="btn btn-primary" id="add_relative_row_btn">Thêm</button>
                     </form>
                   </div>
                 </div>
@@ -229,7 +229,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title">Thêm quá trình học tập</h4>
-                    <button type="button" class="btn-close" data-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                   </div>
 
                   <div class="modal-body">
@@ -258,9 +258,9 @@
                       <div class="form-floating mb-3">
                         <select class="form-control"  id="study_loai" required="">
                             <option value="Xuất sắc">Xuất sắc</option>
-                            <option value="Xuất sắc">Xuất sắc</option>
-                            <option value="Xuất sắc">Xuất sắc</option>
-                            <option value="Xuất sắc">Xuất sắc</option>
+                            <option value="Giỏi">Giỏi</option>
+                            <option value="Khá">Khá</option>
+                            <option value="Trung bình">Trung bình</option>
                         </select>
                           <label for="study_loai">Loại</label>
                       </div>
@@ -268,7 +268,7 @@
                         <textarea class="form-control" rows="2" id="study_namcap" required=""></textarea>
                           <label for="study_namcap">Năm cấp</label>
                       </div>
-                      <button type="button" data-dismiss="modal" class="btn btn-primary" id="add_study_row_btn">Thêm</button>
+                      <button type="button" data-bs-dismiss="modal" class="btn btn-primary" id="add_study_row_btn">Thêm</button>
                     </form>
                   </div>
                 </div>
@@ -279,7 +279,7 @@
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title">Thêm quá trình công tác</h4>
-                    <button type="button" class="btn-close" data-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                   </div>
 
                   <div class="modal-body">
@@ -309,7 +309,7 @@
                         <textarea class="form-control" rows="2" id="thanhtich" required=""></textarea>
                           <label for="thanhtich">Thành tích</label>
                       </div>
-                      <button type="button" data-dismiss="modal" class="btn btn-primary" id="add_row_btn">Thêm</button>
+                      <button type="button" data-bs-dismiss="modal" class="btn btn-primary" id="add_row_btn">Thêm</button>
                     </form>
                   </div>
                 </div>
@@ -382,6 +382,17 @@
                                     <div class="s_website_form_rows row s_col_no_bgcolor">
                                         <div class="tab-content">
                                             <div id="home" class="tab-pane active">
+                                                <div data-name="Field" class="s_website_form_field mb-1 py-2 col-12" data-type="binary">
+                                                    <div class="row s_col_no_resize s_col_no_bgcolor">
+                                                        <label class="col-sm-auto s_website_form_label" style="width: 150px" for="x_partner_avt">
+                                                            <span class="s_website_form_label_content">Ảnh 3x4</span>
+                                                        </label>
+                                                        <div class="col-sm">
+                                                            <div class="o_files_zone row gx-1"></div>
+                                                            <input type="file" class="form-control s_website_form_input" name="x_partner_avt" id="x_partner_avt" data-max-files-number="1" data-max-file-size="3"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="col-12 mb-1 py-2 s_website_form_field s_website_form_required s_website_form_model_required"
                                                      data-type="char" data-name="Field">
                                                     <div class="row s_col_no_resize s_col_no_bgcolor">
@@ -446,7 +457,7 @@
                                                                                     class="s_website_form_input form-check-input"
                                                                                     id="o26uoxe559rl0"
                                                                                     name="x_partner_gender"
-                                                                                    value="male"
+                                                                                    value="Nam"
                                                                                     data-fill-with="undefined"
                                                                                     required=""/>
                                                                             <label class="form-check-label s_website_form_check_label"
@@ -463,7 +474,7 @@
                                                                                     class="s_website_form_input form-check-input"
                                                                                     id="o26uoxe559rl1"
                                                                                     name="x_partner_gender"
-                                                                                    value="female"
+                                                                                    value="Nữ"
                                                                                     required=""/>
                                                                             <label class="form-check-label s_website_form_check_label"
                                                                                    for="o26uoxe559rl1"
@@ -479,7 +490,7 @@
                                                                                     class="s_website_form_input form-check-input"
                                                                                     id="o26uoxe559rl2"
                                                                                     name="x_partner_gender"
-                                                                                    value="other"
+                                                                                    value="Khác"
                                                                                     required=""/>
                                                                             <label class="form-check-label s_website_form_check_label"
                                                                                    for="o26uoxe559rl2"
@@ -679,7 +690,7 @@
                                                                                 class="s_website_form_input form-check-input"
                                                                                 id="o97j5ttqi470"
                                                                                 name="x_partner_marital_status"
-                                                                                value="single"
+                                                                                value="Độc thân"
                                                                                 data-fill-with="undefined"
                                                                                 required=""/>
                                                                         <label class="form-check-label s_website_form_check_label"
@@ -696,7 +707,7 @@
                                                                                 class="s_website_form_input form-check-input"
                                                                                 id="o97j5ttqi471"
                                                                                 name="x_partner_marital_status"
-                                                                                value="married"
+                                                                                value="Đã kết hôn"
                                                                                 required=""/>
                                                                         <label class="form-check-label s_website_form_check_label"
                                                                                for="o97j5ttqi471"
@@ -712,7 +723,7 @@
                                                                                 class="s_website_form_input form-check-input"
                                                                                 id="o97j5ttqi472"
                                                                                 name="x_partner_marital_status"
-                                                                                value="separated"
+                                                                                value="Đã ly hôn"
                                                                                 required=""/>
                                                                         <label class="form-check-label s_website_form_check_label"
                                                                                for="o97j5ttqi472"
@@ -866,7 +877,7 @@
 
                                                     </tbody>
                                                 </table>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#relativeModal">Thêm dòng mới</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#relativeModal">Thêm dòng mới</button>
                                             </div>
                                             <div id="study" class="tab-pane fade">
                                                 <div data-name="Field" class="s_website_form_field mb-3 col-12 d-none" data-type="text">
@@ -895,7 +906,7 @@
 
                                                     </tbody>
                                                 </table>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#studyModal">Thêm dòng mới</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#studyModal">Thêm dòng mới</button>
                                             </div>
                                             <div id="work" class="tab-pane fade">
                                                 <div data-name="Field" class="s_website_form_field mb-3 col-12 d-none" data-type="text">
@@ -923,7 +934,7 @@
 
                                                     </tbody>
                                                 </table>
-                                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#workModal">Thêm dòng mới</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#workModal">Thêm dòng mới</button>
                                             </div>
                                             <div id="opinion" class="tab-pane fade">
                                                 <div data-name="Field"

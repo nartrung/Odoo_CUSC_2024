@@ -125,6 +125,7 @@
                     <group string="Thông tin chung">
                         <field name="partner_id" invisible="1" />
                         <field name="refuse_reason_id" invisible="active"/>
+                        <field name="x_partner_avt" widget="image" style="max-width: 120px; max-height: 160px"/>
                         <field name="x_partner_date_of_birth"/>
                         <field name="x_partner_gender"/>
                         <field name="x_partner_ethnicity"/>

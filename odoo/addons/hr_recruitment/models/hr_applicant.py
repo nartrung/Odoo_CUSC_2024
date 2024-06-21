@@ -112,9 +112,8 @@ class Applicant(models.Model):
         ('archived', 'Archived'),
     ], compute="_compute_application_status")
     applicant_properties = fields.Properties('Properties', definition='job_id.applicant_properties_definition', copy=True)
-    #
-    # x_partner_relative = fields.Text(string='Quan hệ gia đình')
-    # x_partner_study = fields.Text(string='Quá trình học tập')
+
+    x_partner_avt = fields.Binary(string="Ảnh đại diện")
 
     def init(self):
         self.env.cr.execute("""
