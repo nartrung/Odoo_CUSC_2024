@@ -145,7 +145,6 @@
                         <field name="email_from" widget="email"/>
                         <field name="x_partner_marital_status"/>
 
-                        <field name="x_partner_family_address"/>
                         <field name="x_partner_emergency_contact"/>
                         <field name="x_partner_youth_nion_join_date"/>
                         <field name="x_partner_party_join_date"/>
