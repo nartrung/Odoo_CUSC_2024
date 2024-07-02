@@ -353,12 +353,16 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="#relative" data-bs-toggle="pill"
-                                           data-bs-target="#relative">II. Quan hệ gia đình
+                                           data-bs-target="#relative">
+                                            II. Quan hệ gia đình
+                                            <i id="ii" class="fa"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link " href="#study" data-bs-toggle="pill"
-                                           data-bs-target="#study">III. Quá trình học tập
+                                           data-bs-target="#study">
+                                            III. Quá trình học tập
+                                            <i id="iii" class="fa"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -390,6 +394,9 @@
                                                         <div class="col-sm">
                                                             <div class="o_files_zone row gx-1"></div>
                                                             <input type="file" class="form-control s_website_form_input" name="x_partner_avt" id="x_partner_avt" data-max-files-number="1" data-max-file-size="3"/>
+                                                        </div>
+                                                        <div class="col-sm">
+                                                            <img id="view" src="#" style="display: none; max-width: 120px; max-height:160px" ></img>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -857,13 +864,13 @@
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#relativeModal">Thêm dòng mới</button>
                                             </div>
                                             <div id="study" class="tab-pane fade">
-                                                <div data-name="Field" class="s_website_form_field mb-3 col-12 d-none" data-type="text">
+                                                <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_required s_website_form_field_hidden" data-type="text">
                                                     <div class="row s_col_no_resize s_col_no_bgcolor">
                                                         <label class="col-form-label col-sm-auto s_website_form_label" style="width: 150px" for="x_partner_study">
                                                             <span class="s_website_form_label_content">Quá trình học tập</span>
                                                         </label>
                                                         <div class="col-sm">
-                                                            <textarea class="form-control s_website_form_input" name="x_partner_study" placeholder="" id="x_partner_study" rows="3"></textarea>
+                                                            <textarea class="form-control s_website_form_input" name="x_partner_study" placeholder="" id="x_partner_study" rows="3" required=""></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -886,13 +893,14 @@
                                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#studyModal">Thêm dòng mới</button>
                                             </div>
                                             <div id="work" class="tab-pane fade">
-                                                <div data-name="Field" class="s_website_form_field mb-3 col-12 d-none" data-type="text">
+                                                <div data-name="Field" class="s_website_form_field mb-3 col-12 s_website_form_required s_website_form_field_hidden" data-type="text">
                                                     <div class="row s_col_no_resize s_col_no_bgcolor">
                                                         <label class="col-form-label col-sm-auto s_website_form_label" style="width: 150px" for="x_partner_experiences">
                                                             <span class="s_website_form_label_content">Kinh nghiệm</span>
+                                                            <span class="s_website_form_mark"> *</span>
                                                         </label>
                                                         <div class="col-sm">
-                                                            <textarea class="form-control s_website_form_input" name="x_partner_experiences" placeholder="" id="x_partner_experiences" rows="3"></textarea>
+                                                            <textarea class="form-control s_website_form_input" name="x_partner_experiences" placeholder="" id="x_partner_experiences" rows="3" required=""></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1234,8 +1242,12 @@
                     var htn = document.getElementById("x_partner_how_to_know_the_applicant").value;
 
                     var i = document.getElementById("i");
+                    var ii = document.getElementById("ii");
+                    var iii = document.getElementById("iii");
                     var v = document.getElementById("v");
                     i.className = "";
+                    ii.className = "";
+                    iii.className = "";
                     v.className = "";
 
                     if(name.length==0 || dob.length==0 || gender===null || eth.length==0 || religion.length==0 ||
@@ -1244,9 +1256,26 @@
                         i.className = "fa fa-close";
                         i.style = "color:red"
                     } else {
-                    i.className = "fa fa-check";
-                    i.style = "color:green"
+                        i.className = "fa fa-check";
+                        i.style = "color:green"
                     }
+
+                    if(relative.value.length==0){
+                        ii.className = "fa fa-close";
+                        ii.style = "color:red"
+                    } else {
+                        ii.className = "fa fa-check";
+                        ii.style = "color:green"
+                    }
+
+                    if(study.value.length==0){
+                        iii.className = "fa fa-close";
+                        iii.style = "color:red"
+                    } else {
+                        iii.className = "fa fa-check";
+                        iii.style = "color:green"
+                    }
+
                     if(rfw.length==0 || tcw.length==0 || se.length==0 || cr.length==0 || strengths.length==0 ||
                     weaknesses.length==0 || pff.length==0 || htn.length==0){
                         v.className = "fa fa-close";
@@ -1324,8 +1353,8 @@
                   var relative_tuoi = document.getElementById("relative_tuoi").value;
                   var relative_sdt = document.getElementById("relative_sdt").value;
                   var relative_nghenghiep = document.getElementById("relative_nghenghiep").value;
-                  if(relative_ten.length==0 || relative_qh.length==0 || relative_tuoi.length==0 || relative_sdt.length ==0 || relative_nghenghiep.length==0 ){
-                      alert("Vui lòng nhập đầy đủ thông tin");
+                  if(relative_ten.length==0 || relative_qh.length==0){
+                      alert("Không thể thêm! Tên và Quan hệ không thể để trống");
                   }else{
                       var table = document.getElementById("relativeTable").getElementsByTagName('tbody')[0];
                       var row = table.insertRow(-1);

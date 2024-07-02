@@ -10,6 +10,7 @@ publicWidget.registry.hrRecruitment = publicWidget.Widget.extend({
         'focusout #recruitment2' : '_onFocusOutMail',
         'focusout #recruitment4' : '_onFocusOutLinkedin',
         'change #recruitment6': '_changeFile',
+        'change #x_partner_avt': '_changeImage',
     },
 
     init: function () {
@@ -30,6 +31,30 @@ publicWidget.registry.hrRecruitment = publicWidget.Widget.extend({
             alert(_t('Chỉ chấp nhận file định dạng .pdf, .docx, .doc, .jpg, .jpeg, hoặc .png!'));
             fileInput.value = '';
             return false;
+        }
+    },
+    _changeImage(ev) {
+        const fileInput = ev.currentTarget;
+        const allowed = /(\.jpg|\.jpeg|\.png)$/i;
+        if (!allowed.test(fileInput.value)) {
+            alert(_t('Chỉ chấp nhận file định dạng .jpg, .jpeg, hoặc .png!'));
+            fileInput.value = '';
+            return false;
+        }
+        const file = fileInput.files[0].size;
+        const max = 1024 * 1024;
+        if(file > max){
+            alert(_t('File phải dưới 1 MB'));
+            fileInput.value = '';
+            return false;
+        }
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('view').src = e.target.result;
+                document.getElementById('view').style.display = 'block';
+            };
+            reader.readAsDataURL(fileInput.files[0]);
         }
     },
     _onClickApplyButton (ev) {
