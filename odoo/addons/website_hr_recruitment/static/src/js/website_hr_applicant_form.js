@@ -11,6 +11,7 @@ publicWidget.registry.hrRecruitment = publicWidget.Widget.extend({
         'focusout #recruitment4' : '_onFocusOutLinkedin',
         'change #recruitment6': '_changeFile',
         'change #x_partner_avt': '_changeImage',
+        'change #x_partner_score_board': '_changeScoreboard'
     },
 
     init: function () {
@@ -55,6 +56,22 @@ publicWidget.registry.hrRecruitment = publicWidget.Widget.extend({
                 document.getElementById('view').style.display = 'block';
             };
             reader.readAsDataURL(fileInput.files[0]);
+        }
+    },
+    _changeScoreboard(ev) {
+        const fileInput = ev.currentTarget;
+        const allowed = /(\.jpg|\.jpeg|\.png|\.pdf|\.doc)$/i;
+        if (!allowed.test(fileInput.value)) {
+            alert(_t('Chỉ chấp nhận file định dạng .jpg, .jpeg, .png, .pdf, .doc!'));
+            fileInput.value = '';
+            return false;
+        }
+        const file = fileInput.files[0].size;
+        const max = 1024 * 1024;
+        if(file > max){
+            alert(_t('File phải dưới 1 MB'));
+            fileInput.value = '';
+            return false;
         }
     },
     _onClickApplyButton (ev) {

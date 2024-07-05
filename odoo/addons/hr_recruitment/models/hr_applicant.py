@@ -31,7 +31,9 @@ class Applicant(models.Model):
                'utm.mixin']
     _mailing_enabled = True
     _primary_email = 'email_from'
-
+    x_partner_professional_score = fields.Float(string="Điểm kiểm tra chuyên môn")
+    x_partner_interview_score = fields.Float(string="Điểm phỏng vấn")
+    x_partner_score_board = fields.Binary(string="Bảng điểm")
     name = fields.Char("Subject / Application", required=True, help="Email subject for applications sent via email", index='trigram')
     active = fields.Boolean("Active", default=True, help="If the active field is set to false, it will allow you to hide the case without removing it.")
     description = fields.Html("Description")
